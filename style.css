@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 0.5rem);
+}
+
+:root {
+  /* Primary */
+  --Moderate--violet--ease: hsl(263, 68%, 63%);
+  --Moderate--violet: hsl(263, 55%, 52%);
+  --Very--dark--grayish--blue: hsl(217, 19%, 35%);
+  --Very--dark--blackish--blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* Neutral */
+  --Light--gray: hsl(0, 0%, 81%);
+  --Light--grayish--blue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  min-height: 100vh;
+  background-color: var(--Light--grayish--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 2rem;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.boxes {
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: var(--White);
+  transition: all 0.5s ease-in-out;
+
+  &:not(:nth-child(1)) {
+    margin-top: 2rem;
+  }
+
+  h1 {
+    margin: 1rem 0 1rem;
+  }
+
+  p {
+    opacity: 70%;
+  }
+}
+
+.boxes .personal__info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  p:nth-child(2) {
+    opacity: 50%;
+  }
+}
+
+#Daniel {
+  background-color: var(--Moderate--violet);
+  background-image: url(bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position-x: 14rem;
+
+  img {
+    outline: 3px solid var(--Moderate--violet--ease);
+  }
+
+  grid-area: dan;
+
+  h1 {
+    max-width: 26.1ch;
+  }
+
+  p {
+    max-width: 37ch;
+  }
+}
+
+#Jonathan {
+  background-color: var(--Very--dark--grayish--blue);
+  grid-area: jon;
+
+  h1 {
+    max-width: 25ch;
+  }
+
+  p {
+    max-width: 40ch;
+  }
+}
+
+#Jeanette {
+  grid-area: jea;
+
+  h1 {
+    max-width: 25ch;
+  }
+
+  p {
+    max-width: 39ch;
+  }
+}
+
+#Patrick {
+  background-color: var(--Very--dark--blackish--blue);
+  grid-area: pat;
+
+  img {
+    outline: 3px solid var(--Moderate--violet);
+  }
+
+  h1 {
+    max-width: 26ch;
+  }
+
+  p {
+    max-width: 39.3ch;
+  }
+}
+
+#Kira {
+  grid-area: kir;
+
+  h1 {
+    max-width: 27ch;
+  }
+
+  p {
+    max-width: 39.1ch;
+  }
+}
+
+#Jeanette,
+#Kira {
+  background-color: var(--White);
+  color: var(--Very--dark--grayish--blue);
+
+  p:nth-child(1) {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 800px) {
+  #wrapper {
+    gap: 20px;
+    display: grid;
+
+    grid-template-areas:
+      "dan dan"
+      "jon jea"
+      "pat pat"
+      "kir kir"
+      "kir kir";
+  }
+  .boxes {
+    &:not(:nth-child(1)) {
+      margin-top: 0;
+    }
+    place-self: center;
+  }
+
+  #Daniel {
+    background-position-x: 26rem;
+
+    h1 {
+      max-width: 48.9ch;
+    }
+
+    p {
+      max-width: 70ch;
+    }
+  }
+
+  #Jonathan {
+    h1 {
+      max-width: 23ch;
+    }
+
+    p {
+      max-width: 29ch;
+    }
+  }
+
+  #Jeanette {
+    h1 {
+      max-width: 19ch;
+    }
+
+    p {
+      max-width: 26.4ch;
+    }
+  }
+
+  #Patrick {
+    margin-bottom: auto;
+    h1 {
+      max-width: 49.3ch;
+    }
+
+    p {
+      max-width: 70ch;
+    }
+  }
+
+  #Kira {
+    padding: 1.7rem;
+    h1 {
+      max-width: 45ch;
+    }
+
+    p {
+      max-width: 75ch;
+    }
+  }
+}
+
+@media (min-width: 1140px) {
+  body {
+    margin: 0;
+  }
+
+  #wrapper {
+    grid-template-areas:
+      "dan dan dan jon kir"
+      "dan dan dan jon kir"
+      "jea pat pat pat kir"
+      "jea pat pat pat kir"
+      "jea pat pat pat kir";
+  }
+
+  #Daniel {
+    h1 {
+      max-width: 47ch;
+    }
+  }
+
+  #Jeanette {
+    margin-right: auto;
+
+    p {
+      max-width: 30ch;
+    }
+  }
+
+  #Patrick {
+    margin-left: auto;
+  }
+
+  #Kira {
+    h1 {
+      max-width: 25ch;
+    }
+
+    p {
+      max-width: 32ch;
+    }
+  }
+}
+
+@media (max-height: 700px) {
+  body {
+    margin: 2rem 3rem 1rem;
+  }
+}
+
+@media (width > 2000px) and (height > 800px) {
+  #wrapper {
+    scale: 1.2;
+  }
+}
